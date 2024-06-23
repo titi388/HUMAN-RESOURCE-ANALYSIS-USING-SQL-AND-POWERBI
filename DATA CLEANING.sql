@@ -85,7 +85,9 @@ update `human resource`
 set Age =TIMESTAMPDIFF(YEAR,birthdate,CURDATE());
 
 SELECT 
-CONCAT(FLOOR(TIMESTAMPDIFF(YEAR,birthdate,CURDATE())/10) * 10,'-',FLOOR(TIMESTAMPDIFF(YEAR,birthdate,CURDATE()) / 10) * 10 + 9) AS age_range,COUNT(employee_id) AS number_of_employees
+CONCAT(FLOOR(TIMESTAMPDIFF(YEAR,birthdate,CURDATE())/10)*10,'-',FLOOR(TIMESTAMPDIFF(YEAR,birthdate,CURDATE()) / 10) * 10 + 9) AS age_range,COUNT(*) AS number_of_employees
 FROM `human resource`
-GROUP BY age_range
-order by;
+GROUP BY 
+age_range
+order by
+AGE_RANGE;
